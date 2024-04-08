@@ -1,0 +1,93 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "rgNames": {
+      "value": [
+        {
+          "rgdetail": {
+            "name": "rgdeployment",
+            "env": "dev",
+            "location": "eastus",
+            "tags": {
+              "Environment": "dev",
+              "Cost": "Department",
+              "ResOwner": "Owner",
+              "Project": "Project"
+            }
+          }
+        },
+        {
+          "rgdetail": {
+            "name": "rgdeployment",
+            "env": "uat",
+            "location": "eastus",
+            "tags": {
+              "Environment": "uat",
+              "Cost": "Department",
+              "ResOwner": "Owner",
+              "Project": "Project "
+            }
+          }
+        },
+        {
+          "rgdetail": {
+            "name": "rgdeployment",
+            "env": "prod",
+            "location": "eastus",
+            "tags": {
+              "Environment": "prod",
+              "Cost": "Department",
+              "ResOwner": "Owner",
+              "Project": "Project "
+            }
+          }
+        }
+
+      ]
+    },
+    "StorageNames": {
+      "value": [
+        {
+          "rgName": "dev-rg",
+          "Storageparameters": {
+            "location": "eastus",
+            "environmentType": "dev",
+            "tags": {
+              "Environment": "dev",
+              "Cost": "Department",
+              "ResOwner": "Owner",
+              "Project": "Project"
+            }
+          }
+        },
+        {
+          "rgName": "uat-rg",
+          "Storageparameters": {
+            "location": "eastus",
+            "environmentType": "uat",
+            "tags": {
+              "Environment": "uat",
+              "Cost": "Department",
+              "ResOwner": "Owner",
+              "Project": "Project"
+            }
+          }
+        },
+        {
+          "rgName": "prod-rg",
+          "Storageparameters": { 
+            "location": "eastus",
+            "environmentType": "prod",
+            "tags": {
+              "Environment": "prod",
+              "Cost": "Department",
+              "ResOwner": "Owner",
+              "Project": "Project"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
