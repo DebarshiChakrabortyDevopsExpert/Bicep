@@ -1,0 +1,25 @@
+trigger:
+- none
+
+variables:
+  backendServiceArm:  'bicep_practice_demo'
+  mainFile:           'main.bicep'
+  paramFile:          'mainparam.json'
+
+
+name: Deploy Bicep files
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - checkout: self
+  - task: AzureCLI@2
+    name: DeployBicepFileRG
+    displayName: Deploy RG Bicep file
+    inputs:
+      azureSubscription: $(backendServiceArm)
+      scriptType: 'bash'
+      scriptLocation: 'inlineScript'
+      inlineScript: |
+        az deployment sub create --location eastus --template-file $(System.DefaultWorkingDirectory)/$(mainFile) --parameters $(System.DefaultWorkingDirectory)/$(paramFile)
